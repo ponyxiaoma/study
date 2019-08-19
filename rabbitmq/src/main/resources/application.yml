@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment: #配置rabbimq连接环境
+            spring:
+              rabbitmq:
+                host: 127.0.0.1
+                username: rabbitmq
+                password: 123456
+      bindings:
+        #账户通道
+        input:
+          destination: topicOne
+          content-type: application/json
+        output:
+          destination: topicOne
+          content-type: application/json
