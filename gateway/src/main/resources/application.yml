@@ -1,2 +1,12 @@
 server:
   port: 9201
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: config_route
+          predicates:
+            - Path=/redis/** # 路径匹配
+          filters:
+            - StripPrefix=1 # 跳过前缀
+          uri: http://localhost:8080/say # spring-cloud-gateway-service 的访问地址

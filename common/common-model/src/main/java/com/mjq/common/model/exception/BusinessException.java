@@ -1,6 +1,6 @@
-package com.mjq.common.exception;
+package com.mjq.common.model.exception;
 
-import com.mjq.common.enums.CodeEnum;
+import com.mjq.common.model.enums.CodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

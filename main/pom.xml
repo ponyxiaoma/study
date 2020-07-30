@@ -45,6 +45,12 @@
             <version>5.1.46</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.mjq</groupId>
+            <artifactId>common-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
 <!--        <dependency>-->
 <!--            <groupId>com.mjq</groupId>-->
 <!--            <artifactId>mybatis-plus-generator</artifactId>-->

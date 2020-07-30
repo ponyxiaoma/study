@@ -1,6 +1,7 @@
-package com.mjq.redis;
+package com.mjq.common.web.redis;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -12,23 +13,23 @@ import java.util.concurrent.TimeUnit;
  * @Date: 2019-04-25 15:59
  */
 @Component
-public class RedisManager {
+public class RedisManager<T> {
 
     @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
+    private RedisTemplate<String, T> redisTemplate;
 
     // valueOperate
 
 
-    public void set(String k, Object v) {
+    public void set(String k, T v) {
         redisTemplate.opsForValue().set(k, v);
     }
 
-    public Object get(String k) {
+    public T get(String k) {
         return redisTemplate.opsForValue().get(k);
     }
 
-    public void set(String k, Object v, long timeout, TimeUnit unit) {
+    public void set(String k, T v, long timeout, TimeUnit unit) {
         redisTemplate.opsForValue().set(k, v, timeout, unit);
     }
 
@@ -44,45 +45,46 @@ public class RedisManager {
     //hashOperate
 
 
-    public void hashPut(String k, String hk, String hv) {
+    public void hashPut(String k, String hk, T hv) {
         redisTemplate.opsForHash().put(k, hk, hv);
     }
 
-    public Object hashGet(String k, String hk) {
-        return redisTemplate.opsForHash().get(k, hk);
+    public T hashGet(String k, String hk) {
+        HashOperations<String, String, T> hashOperations = redisTemplate.opsForHash();
+        return hashOperations.get(k, hk);
     }
 
 
     //listOperate
 
 
-    public Object listIndex(String k, long index) {
+    public T listIndex(String k, long index) {
         return redisTemplate.opsForList().index(k, index);
     }
 
-    public Long listLeftPush(String k, Object v) {
+    public Long listLeftPush(String k, T v) {
         return redisTemplate.opsForList().leftPush(k, v);
     }
 
-    public Long listRightPush(String k, Object v) {
+    public Long listRightPush(String k, T v) {
         return redisTemplate.opsForList().rightPush(k, v);
     }
 
-    public Object listLeftPop(String k) {
+    public T listLeftPop(String k) {
         return redisTemplate.opsForList().leftPop(k);
     }
 
-    public Object listRightPop(String k) {
+    public T listRightPop(String k) {
         return redisTemplate.opsForList().rightPop(k);
     }
 
     //setOperate
 
-    public Long setAdd(String k, String v) {
+    public Long setAdd(String k, T v) {
         return redisTemplate.opsForSet().add(k, v);
     }
 
-    public Object setPop(String k) {
+    public T setPop(String k) {
         return redisTemplate.opsForSet().pop(k);
     }
 

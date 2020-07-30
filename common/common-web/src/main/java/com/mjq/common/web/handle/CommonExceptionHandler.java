@@ -1,7 +1,8 @@
-package com.mjq.common.exception;
+package com.mjq.common.web.handle;
 
-import com.mjq.common.bean.Result;
-import com.mjq.common.enums.CodeEnum;
+import com.mjq.common.model.bean.Result;
+import com.mjq.common.model.enums.CodeEnum;
+import com.mjq.common.model.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -1,6 +1,7 @@
 package com.mjq;
 
-import com.mjq.redis.RedisManager;
+import com.mjq.common.web.redis.RedisManager;
+import com.mjq.dto.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,29 +18,44 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class RedisTest {
 
     @Autowired
-    private RedisManager redisManager;
-
+    private RedisManager<User> userRedisManager;
+    @Autowired
+    private RedisManager<String> redisManager;
 
     @Test
     public void save() {
-        redisManager.hashPut("a", "b", "c");
+        User user = new User();
+        user.setUserId(1L);
+        user.setUserName("pony");
+        user.setAge(25);
+        userRedisManager.hashPut("a", "b", user);
     }
 
     @Test
     public void getForHash() {
-        Object v = redisManager.hashGet("a", "b");
-        System.out.println(v);
+        User v = userRedisManager.hashGet("a", "b");
+        System.out.println(v.getUserName());
     }
 
     @Test
     public void rightPush() {
-        redisManager.listRightPush("c", "b");
-        redisManager.listRightPush("c", "b");
+        User user = new User();
+        user.setUserId(1L);
+        user.setUserName("pony");
+        user.setAge(25);
+        userRedisManager.listRightPush("c", user);
+        userRedisManager.listRightPush("c", user);
+    }
+
+    @Test
+    public void listIndex() {
+        User user = userRedisManager.listIndex("c", 0);
+        System.out.println(user.getUserName());
     }
 
     @Test
     public void rightPop() {
-        redisManager.listRightPop("c");
+        userRedisManager.listRightPop("c");
     }
 
     @Test

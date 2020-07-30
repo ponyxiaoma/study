@@ -1,6 +1,6 @@
-package com.mjq.common.bean;
+package com.mjq.common.model.bean;
 
-import com.mjq.common.enums.CodeEnum;
+import com.mjq.common.model.enums.CodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

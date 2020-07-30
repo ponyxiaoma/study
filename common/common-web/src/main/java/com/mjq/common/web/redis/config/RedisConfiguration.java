@@ -1,4 +1,4 @@
-package com.mjq;
+package com.mjq.common.web.redis.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

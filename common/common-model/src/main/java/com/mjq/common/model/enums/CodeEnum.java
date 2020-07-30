@@ -1,4 +1,4 @@
-package com.mjq.common.enums;
+package com.mjq.common.model.enums;
 
 import lombok.Getter;
 
