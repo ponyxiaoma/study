@@ -1,8 +1,10 @@
 package com.mjq.redis.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.mjq.common.model.bean.Result;
 import com.mjq.redis.dto.ShoppingCartDTO;
 import com.mjq.redis.service.ShoppingCartService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/shoppingCart")
+@Slf4j
 public class ShoppingCartController {
 
     @Autowired
@@ -20,6 +23,7 @@ public class ShoppingCartController {
 
     @PostMapping("/add")
     public Result<Object> add(@RequestBody ShoppingCartDTO shoppingCartDTO) {
+        log.info("添加购物车shoppingCartDTO:{}", JSON.toJSONString(shoppingCartDTO));
         shoppingCartService.addShoppingCart(shoppingCartDTO);
         return Result.successResult(null);
     }

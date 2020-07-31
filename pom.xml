@@ -69,25 +69,29 @@
                 <version>2.3.0.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
-<!--                <exclusions>-->
-<!--                    <exclusion>-->
-<!--                        <groupId>io.projectreactor.netty</groupId>-->
-<!--                        <artifactId>reactor-netty</artifactId>-->
-<!--                    </exclusion>-->
-<!--                </exclusions>-->
             </dependency>
 
-<!--            <dependency>-->
-<!--                <groupId>io.projectreactor.netty</groupId>-->
-<!--                <artifactId>reactor-netty</artifactId>-->
-<!--                <version>0.9.7.RELEASE</version>-->
-<!--            </dependency>-->
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-eureka-server</artifactId>
                 <version>1.4.7.RELEASE</version>
             </dependency>
+
+            <!-- Log4j2 异步支持 -->
+            <dependency>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>3.3.6</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.70</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
