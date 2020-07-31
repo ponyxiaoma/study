@@ -1,12 +1,12 @@
-package com.mjq;
+package com.mjq.websocket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MainApplication {
+public class WebsocketApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MainApplication.class, args);
+        SpringApplication.run(WebsocketApplication.class, args);
     }
 }

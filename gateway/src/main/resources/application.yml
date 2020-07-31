@@ -1,12 +1,27 @@
 server:
   port: 9201
 spring:
+  application:
+    name: study-gateway
   cloud:
     gateway:
       routes:
-        - id: config_route
+        - id: study-redis
           predicates:
             - Path=/redis/** # 路径匹配
           filters:
             - StripPrefix=1 # 跳过前缀
-          uri: http://localhost:8080/say # spring-cloud-gateway-service 的访问地址
+          uri: lb://STUDY-REDIS # spring-cloud-gateway-service 的访问地址
+      loadbalancer:
+        use404: true
+
+eureka:
+  instance:
+    leaseExpirationDurationInSeconds: 90   #服务失效时间，默认值90秒
+    leaseRenewalIntervalInSeconds: 1   #服务续约的间隔，默认为30秒
+  client:
+    registerWithEureka: true   #是否注册自己的信息到EurekaServer,默认为true
+    fetchRegistry: true   #是否拉取其它服务的信息，默认是true
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/

@@ -1,4 +1,4 @@
-package com.mjq.controller;
+package com.mjq.common.web.jackson;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;

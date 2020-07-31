@@ -1,4 +1,4 @@
-package com.mjq.es;
+package com.mjq.redis.es;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

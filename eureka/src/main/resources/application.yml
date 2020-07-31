@@ -4,8 +4,13 @@ server:
 eureka:
   instance:
     hostname: 127.0.0.1
+    leaseExpirationDurationInSeconds: 90   #服务失效时间，默认值90秒
+    leaseRenewalIntervalInSeconds: 30   #服务续约的间隔，默认为30秒
+  server:
+    evictionIntervalTimerInMs: 2000  # 扫描失效服务的间隔时间（缺省为60*1000ms）
+    enableSelfPreservation: false  # 关闭自我保护模式
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: false   #是否注册自己的信息到EurekaServer,默认为true
+    fetchRegistry: false   #是否拉取其它服务的信息，默认是true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

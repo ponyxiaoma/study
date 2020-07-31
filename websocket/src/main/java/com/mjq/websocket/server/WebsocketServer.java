@@ -1,4 +1,4 @@
-package com.mjq.server;
+package com.mjq.websocket.server;
 
 import org.springframework.stereotype.Component;
 

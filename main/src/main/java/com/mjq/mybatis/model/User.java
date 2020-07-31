@@ -2,8 +2,8 @@ package com.mjq.mybatis.model;
 
 import lombok.Data;
 
-import java.util.Date;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>

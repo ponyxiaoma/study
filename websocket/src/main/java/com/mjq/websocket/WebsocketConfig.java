@@ -1,4 +1,4 @@
-package com.mjq;
+package com.mjq.websocket;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

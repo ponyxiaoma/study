@@ -54,6 +54,10 @@ public class RedisManager<T> {
         return hashOperations.get(k, hk);
     }
 
+    public long hashIncrement(String k, String hk, long delta) {
+        return redisTemplate.opsForHash().increment(k, hk, delta);
+    }
+
 
     //listOperate
 
