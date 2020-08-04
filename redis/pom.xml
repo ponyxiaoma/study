@@ -65,7 +65,13 @@
 
         <dependency>
             <groupId>com.mjq</groupId>
-            <artifactId>common-web</artifactId>
+            <artifactId>common-web-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mjq</groupId>
+            <artifactId>common-redis-spring-boot-starter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

@@ -1,6 +1,6 @@
 package com.mjq.redis.service.impl;
 
-import com.mjq.common.web.redis.RedisManager;
+import com.mjq.common.redis.utils.RedisManager;
 import com.mjq.redis.dto.ShoppingCartDTO;
 import com.mjq.redis.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -10,7 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
  * @author majingqiang
  */
 @SpringCloudApplication
-@ComponentScan({"com.mjq.common.web","com.mjq.redis"})
 public class RedisApplication {
 
     public static void main(String[] args) {
