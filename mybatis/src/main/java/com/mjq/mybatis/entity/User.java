@@ -1,23 +1,18 @@
-package com.mjq.mybatis.model;
+package com.mjq.mybatis.entity;
 
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
-/**
- * <p>
- * 
- * </p>
- *
- * @author majingqiang
- * @since 2018-11-10
- */
 @Data
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * id
+     */
     private Long id;
 
     /**
@@ -33,11 +28,15 @@ public class User implements Serializable {
     /**
      * 生日
      */
-    private Date birthday;
+    private LocalDateTime birthday;
 
-    private Date createTime;
+    /**
+     * create_time
+     */
+    private LocalDateTime createTime;
 
-    private Date updateTime;
-
-
+    /**
+     * update_time
+     */
+    private LocalDateTime updateTime;
 }
