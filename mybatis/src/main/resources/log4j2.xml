@@ -7,7 +7,7 @@
 
     <!-- 配置日志文件输出目录，此配置将日志输出到tomcat根目录下的指定文件夹 -->
     <properties>
-        <property name="LOG_HOME">/Users/majingqiang/study/mybatis/logs</property>
+        <property name="LOG_HOME">D:\study\logs</property>
     </properties>
     <!--先定义所有的appender-->
     <appenders>
