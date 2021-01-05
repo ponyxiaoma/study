@@ -1,8 +1,8 @@
 package com.mjq.mybatis;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * @author majingqiang

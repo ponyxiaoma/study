@@ -1,0 +1,72 @@
+server:
+  port: 8009
+  servlet:
+    context-path: /account
+
+spring:
+  application:
+    name: study-account
+  datasource:
+    druid:
+      url: jdbc:mysql://120.55.58.178:3306/study?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+      username: root
+      password:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1
+      test-on-borrow: true
+      test-on-return: false
+      test-while-idle: true
+mybatis:
+  configuration:
+    #全局激活mybatis缓存
+    cacheEnabled: true
+    #激活延迟加载
+    lazyLoadingEnabled: true
+    #允许返回多结果集
+    multipleResultSetsEnabled: true
+    #允许使用列的标号
+    useColumnLabel: true
+    #不允许使用JDBC的生成主键机制
+    useGeneratedKeys: false
+    #允许自动映射不嵌套的结果集到field
+    autoMappingBehavior: PARTIAL
+    #碰到未知的列时输出警告信息
+    autoMappingUnknownColumnBehavior: WARNING
+    #使用支持PS的executor
+    defaultExecutorType: REUSE
+    #等待数据库返回的过期时间
+    defaultStatementTimeout: 25
+    #数据库一个结果集返回的大小
+    defaultFetchSize: 100
+    #嵌套的SQL中不允许使用RowBouds
+    safeRowBoundsEnabled: false
+    #将数据库的下划线列映射到java的驼峰命名属性
+    mapUnderscoreToCamelCase: true
+    #一次seesion中的执行内容会被缓存
+    localCacheScope: SESSION
+    #当参数中没有指定JDBC类型时，指定下面的值作为数据库NULL值的JDBC类型
+    jdbcTypeForNull: OTHER
+    #指定哪些方法触发数据库的延迟加载
+    lazyLoadTriggerMethods: equals,clone,hashCode,toString
+
+eureka:
+  instance:
+    leaseExpirationDurationInSeconds: 90   #服务失效时间，默认值90秒
+    leaseRenewalIntervalInSeconds: 10   #服务续约的间隔，默认为30秒
+  client:
+    registerWithEureka: true   #是否注册自己的信息到EurekaServer,默认为true
+    fetchRegistry: false   #是否拉取其它服务的信息，默认是true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+
+logging:
+  config: classpath:log4j2.xml

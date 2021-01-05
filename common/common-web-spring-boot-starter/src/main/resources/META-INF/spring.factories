@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.mjq.common.web.exception.CommonExceptionHandler
+com.mjq.common.web.exception.CommonExceptionHandler,\
+com.mjq.common.web.config.DateFormatConfig

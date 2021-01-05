@@ -1,8 +1,8 @@
 package com.mjq.mybatis.service.impl;
 
 import com.github.pagehelper.Page;
-import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.mjq.mybatis.entity.User;
 import com.mjq.mybatis.mapper.UserMapper;
 import com.mjq.mybatis.service.UserService;
@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int save(User user) {
-        return userMapper.insert(user);
+        return userMapper.insertUseGeneratedKeys(user);
     }
 
     @Override
