@@ -70,3 +70,7 @@ eureka:
 
 logging:
   config: classpath:log4j2.xml
+
+mjq:
+  mybatis:
+    AutoSaveOperator: false
